@@ -8,10 +8,12 @@
     "start": "next start"
   },
   "dependencies": {
+    "@anthropic-ai/sdk": "^0.100.1",
     "lucide-react": "^0.400.0",
     "next": "14.2.5",
     "react": "^18",
     "react-dom": "^18",
+    "recharts": "^3.8.1",
     "vercel": "^51.6.1"
   },
   "devDependencies": {

@@ -4,6 +4,7 @@ import { LayoutGrid, Users, UserCheck, Bell, Calendar, Kanban, BarChart2, Settin
 type Tab = string;
 
 const VIEWS: { label: string; icon: React.ReactNode; tab: Tab }[] = [
+  { label: "Analytics",          icon: <BarChart2 size={15} />, tab: "analytics" },
   { label: "All Leads",          icon: <Users size={15} />,    tab: "all" },
   { label: "New — Unclaimed",    icon: <Bell size={15} />,     tab: "unclaimed" },
   { label: "Follow-up Needed",   icon: <UserCheck size={15} />, tab: "followup" },
@@ -36,7 +37,7 @@ export default function Sidebar({ activeTab, onTabChange }: Props) {
         <p className="text-[10px] uppercase tracking-widest font-semibold px-2 mb-1" style={{ color: "#5A5A7A" }}>Tables</p>
         <button className="w-full flex items-center gap-2 px-2 py-1.5 rounded-md text-left" style={{ background: "#2F2F45", color: "#E0E0F0" }}>
           <Kanban size={13} style={{ color: "#F97316" }} />
-          <span className="text-xs font-medium">Lead Pipeline</span>
+          <span className="text-sm font-semibold">Lead Pipeline</span>
         </button>
       </div>
 
@@ -59,7 +60,7 @@ export default function Sidebar({ activeTab, onTabChange }: Props) {
                 onMouseLeave={e => { if (!isActive) (e.currentTarget as HTMLElement).style.background = "transparent"; }}
               >
                 <span style={{ color: isActive ? "#F97316" : "#6060A0" }}>{icon}</span>
-                <span className="text-xs">{label}</span>
+                <span className="text-sm">{label}</span>
               </button>
             );
           })}
@@ -70,7 +71,7 @@ export default function Sidebar({ activeTab, onTabChange }: Props) {
       <div className="px-3 py-3 border-t border-white/5">
         <div className="flex items-center gap-2 px-2 py-1.5">
           <div className="w-6 h-6 rounded-full flex items-center justify-center text-[10px] font-bold text-white" style={{ background: "#F97316" }}>A</div>
-          <span className="text-xs" style={{ color: "#A0A0C0" }}>Admin</span>
+          <span className="text-sm" style={{ color: "#A0A0C0" }}>Admin</span>
           <Settings size={12} className="ml-auto cursor-pointer" style={{ color: "#5A5A7A" }} />
         </div>
         <div className="flex gap-1 mt-2 px-2">
